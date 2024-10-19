@@ -1,4 +1,4 @@
-FROM golang:bookworm as builder
+FROM golang:bookworm AS builder
 
 WORKDIR /usr/src/app
 
@@ -15,4 +15,4 @@ COPY --from=builder /usr/src/app/wgo /usr/local/bin/wgo
 WORKDIR /usr/src/app
 
 ENTRYPOINT ["wgo"]
-CMD ["run", "cmd/main.go"]
+CMD ["-h"]
